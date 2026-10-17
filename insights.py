@@ -6,7 +6,7 @@ import statistics
 from collections import defaultdict
 from datetime import datetime, timedelta
 
-from core.puzzles import PROFILE_AXES, SKILL_NAMES
+from puzzles import PROFILE_AXES, SKILL_NAMES
 
 SKILL_TO_AXIS = {s: axis for axis, skills in PROFILE_AXES.items() for s in skills}
 MIN_GROUP = 8

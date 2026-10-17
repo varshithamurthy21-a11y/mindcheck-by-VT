@@ -3,9 +3,8 @@ import streamlit as st
 
 st.set_page_config(page_title="MindCheck by VT", page_icon="🧠", layout="wide")
 
-from views import (battery_page, checkin_page, grounding_page, help_page, home, insights_page,  # noqa: E402
-                   journal_page, progress_page, puzzles_page)
-from views.theme import apply_theme, sidebar  # noqa: E402
+import battery_page, checkin_page, grounding_page, help_page, home, insights_page, journal_page, progress_page, puzzles_page  # noqa: E402
+from theme import apply_theme, sidebar  # noqa: E402
 
 ROUTES = {
     "Home": home.render,

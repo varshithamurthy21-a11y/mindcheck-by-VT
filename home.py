@@ -2,9 +2,9 @@ import html
 
 import streamlit as st
 
-from core import agent, db, quotes
-from views.theme import go, brain_svg
-from views.widgets import support_box, need_nickname
+import agent, db, quotes
+from theme import go, brain_svg
+from widgets import support_box, need_nickname
 
 PLAN_PAGES = {"grounding": "Grounding Toolbox", "battery": "Brain Battery",
               "journal": "Mind Journal", "puzzles": "Brain Puzzles"}

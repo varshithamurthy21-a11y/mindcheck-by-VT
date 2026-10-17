@@ -13,8 +13,8 @@ a number or skip a safety step. The AI only writes the friendly words.
 """
 import os
 
-from core import adaptive
-from core.content import TIPS, score_wellbeing, wellbeing_needs_support
+import adaptive
+from content import TIPS, score_wellbeing, wellbeing_needs_support
 
 MODEL = "claude-sonnet-5-5"
 

@@ -7,8 +7,8 @@ lowers their working-memory scores (so the insights have something to find).
 import random
 from datetime import datetime, timedelta
 
-from core import db
-from core.sentiment import analyze
+import db
+from sentiment import analyze
 
 JOURNAL_SAMPLES = [
     "Had a calm morning and enjoyed my tea. Grateful for a quiet day.",

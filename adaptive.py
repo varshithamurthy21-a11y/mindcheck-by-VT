@@ -4,8 +4,8 @@ All rules are simple and visible, so nothing happens 'by magic'.
 """
 from datetime import datetime
 
-from core import db
-from core.emotion_wheel import DISTRESS_WORDS
+import db
+from emotion_wheel import DISTRESS_WORDS
 
 HEAVY_EMOTIONS = {"anxiety", "stress", "burnout"}
 

@@ -54,23 +54,12 @@ Most puzzles are **generated from rules** every time (thousands of combinations)
 published IQ tests or clinical questionnaires.
 
 ## Project structure
-```
-app.py                  Router: theme + sidebar + pages
-.streamlit/config.toml  Lagoon theme colours
-core/                   Logic (no Streamlit, easy to test)
-  puzzles.py            Puzzle generators for all pillars
-  battery.py            Brain Battery tasks and readiness score
-  sentiment.py          Private on-device emotion analysis
-  emotion_wheel.py      Emotion wheel data
-  adaptive.py           Mood-aware difficulty, calm mode, micro-breaks, distress check
-  insights.py           Cognitive profile, trajectory, mind-body insights
-  agent.py              Coach agent (+ optional Claude)
-  content.py            Wellbeing questions, tips, support lines
-  db.py                 SQLite storage
-  demo_data.py          4 weeks of demo data (removable)
-views/                  One file per page + theme and widgets
-tests/                  Logic tests and page smoke tests
-```
+All files sit at the top level (easy to upload):
+- `app.py` - starts the app and routes between pages
+- `*_page.py`, `home.py`, `theme.py`, `widgets.py` - the screens (UI)
+- `puzzles.py`, `battery.py`, `sentiment.py`, `emotion_wheel.py`, `adaptive.py`, `insights.py`, `agent.py`,
+  `quotes.py`, `content.py`, `db.py`, `demo_data.py` - the logic
+- `.streamlit/config.toml` - theme colours
 
 ## Run on your computer
 ```bash
@@ -80,11 +69,6 @@ streamlit run app.py
 Tip: type a nickname in the sidebar, then open **My Progress** and click **Load 4 weeks of demo data** to see
 the profile radar and insights right away. Remove it with one click.
 
-Run the tests:
-```bash
-python -m tests.test_core
-python tests/smoke_pages.py
-```
 
 Optional AI messages: create `.streamlit/secrets.toml` with
 ```toml
@@ -93,7 +77,7 @@ ANTHROPIC_API_KEY = "your-key-here"
 Never upload this file to GitHub (it is already in `.gitignore`).
 
 ## Deploy for free (Streamlit Community Cloud)
-1. Upload **all files and folders** (including `core/`, `views/` and `.streamlit/config.toml`) to a public GitHub repo.
+1. Upload all files to a public GitHub repo, plus `.streamlit/config.toml`.
 2. Go to **share.streamlit.io** → **Create app** → choose the repo → main file `app.py` → **Deploy**.
 3. (Optional) Add `ANTHROPIC_API_KEY` under the app's **Settings → Secrets**.
 
