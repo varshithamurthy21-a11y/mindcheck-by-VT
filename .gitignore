@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+mindcheck.db
+.streamlit/secrets.toml
+.venv/
